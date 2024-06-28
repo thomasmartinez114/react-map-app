@@ -3,6 +3,7 @@ import './App.css';
 import 'leaflet/dist/leaflet.css';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Icon } from 'leaflet';
 
 function App() {
   const markers = [
@@ -20,6 +21,12 @@ function App() {
     },
   ];
 
+  const customIcon = new Icon({
+    // iconUrl: 'https://cdn-icons-png.flaticon.com/128/684/684908.png',
+    iconUrl: require('./img/marker-icon.png'),
+    iconSize: [38, 38], // size of the icon
+  });
+
   // providence coordinates
   // 41.824, 71.4128
 
@@ -33,7 +40,7 @@ function App() {
         <Popup>My first Marker creation! - devtommie</Popup>
       </Marker> */}
       {markers.map(marker => (
-        <Marker position={marker.geocode}></Marker>
+        <Marker position={marker.geocode} icon={customIcon}></Marker>
       ))}
     </MapContainer>
   );
