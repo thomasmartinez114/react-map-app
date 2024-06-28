@@ -22,7 +22,6 @@ function App() {
   ];
 
   const customIcon = new Icon({
-    // iconUrl: 'https://cdn-icons-png.flaticon.com/128/684/684908.png',
     iconUrl: require('./img/marker-icon.png'),
     iconSize: [38, 38], // size of the icon
   });
