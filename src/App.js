@@ -1,12 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import 'leaflet/dist/leaflet.css';
+
+import { MapContainer, TileLayer } from 'react-leaflet';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Devtommie Map</h1>
-      <h2>Welcome to my map</h2>
-    </div>
+    <MapContainer center={[41.824, 71.4128]} zoom={13}>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+      />
+    </MapContainer>
   );
 }
 
